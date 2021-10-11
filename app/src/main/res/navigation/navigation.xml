@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/commonDiseasesFragment">
+
+    <fragment
+        android:id="@+id/commonDiseasesFragment"
+        android:name="com.example.newsapi.CommonDiseasesFragment"
+        android:label="@string/dis_title"
+        tools:layout="@layout/common_diseases_fragment" >
+        <action
+            android:id="@+id/action_commonDiseasesFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/savedDiseasesFragment"
+        android:name="com.example.newsapi.SavedDiseasesFragment"
+        android:label="@string/saved"
+        tools:layout="@layout/fragment_saved_diseases" >
+        <action
+            android:id="@+id/action_savedDiseasesFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchDiseasesFragment"
+        android:name="com.example.newsapi.SearchDiseasesFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search_diseases" >
+        <action
+            android:id="@+id/action_searchDiseasesFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.newsapi.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" />
+</navigation>
