@@ -1,4 +1,4 @@
-package com.example.newsapi
+package com.example.newsapi.models
 
 data class Query(
     val APiType: String,
