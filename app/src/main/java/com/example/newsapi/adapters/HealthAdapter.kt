@@ -5,12 +5,22 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newsapi.databinding.ArticleItemPreviewBinding
+import com.example.newsapi.models.Disease
 import com.example.newsapi.models.HealthResponse
 import com.example.newsapi.models.Result
 
 class HealthAdapter: RecyclerView.Adapter<HealthAdapter.HealthViewHolder>() {
 
-    inner class HealthViewHolder(private var binding:)
+    inner class HealthViewHolder(private var binding: ArticleItemPreviewBinding):
+        RecyclerView.ViewHolder(binding.root) {
+
+            fun bind(currentArticle: Disease) {binding.apply {
+
+            }
+
+            }
+        }
 
     private val differCallBack = object : DiffUtil.ItemCallback<Result>() {
         override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
@@ -26,16 +36,17 @@ class HealthAdapter: RecyclerView.Adapter<HealthAdapter.HealthViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HealthViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding =
+        val binding = ArticleItemPreviewBinding.inflate(layoutInflater, parent, false)
+        return HealthViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: HealthViewHolder, position: Int) {
-        TODO("Not yet implemented")
+val article = differ.currentList[position]
+        holder.bind()
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        val currentArticle = differ.currentList.size
     }
-
 
 }
