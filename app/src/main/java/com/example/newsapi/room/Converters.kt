@@ -1,9 +1,6 @@
 package com.example.newsapi.room
 
 import androidx.room.TypeConverter
-import com.example.newsapi.models.Disease
-import com.example.newsapi.models.Items
-import com.example.newsapi.models.Query
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
@@ -13,7 +10,8 @@ class Converters {
     private val type: Type = Types.newParameterizedType(List::class.java, String::class.java)
     private val moshi: Moshi = Moshi.Builder().build()
     private val adapter: JsonAdapter<List<String>> = moshi.adapter(type)
-    private val ownAdapter: JsonAdapter<Items> = moshi.adapter(Items::class.java)
+    private val diagnosis: JsonAdapter<Any> = moshi.adapter(Any::class.java)
+  /*  private val ownAdapter: JsonAdapter<Items> = moshi.adapter(Items::class.java)
     private val anotherAdapter: JsonAdapter<Query> = moshi.adapter(Query::class.java)
 
     @TypeConverter
@@ -27,6 +25,13 @@ class Converters {
 
     @TypeConverter
     fun jsonToAnother(json: String): Query = anotherAdapter.fromJson(json)!!
+*/
+
+    @TypeConverter
+    fun diagnosisToJson(diagnosis1: Any): String = diagnosis.toJson(diagnosis1)
+
+    @TypeConverter
+    fun jsonToDiagnosis(json: String): Any = diagnosis.fromJson(json)!!
 
 
     @TypeConverter

@@ -1,4 +1,4 @@
-package com.example.newsapi.models
+package com.example.newsapi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

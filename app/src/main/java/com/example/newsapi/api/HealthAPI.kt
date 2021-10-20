@@ -1,24 +1,22 @@
 package com.example.newsapi.api
 
-import com.example.newsapi.models.HealthResponse
+import com.example.newsapi.models.HealthResult
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface HealthAPI {
-    @GET("myhealthfinder/api/v3/itemlist.json?Type=topic")
+    @GET("/diseases.json")
     suspend fun generalTopics(
-        @Query("language")
-        language: String = "en",
         @Query("page")
         pageNumber:Int = 1
-    ): Response<HealthResponse>
+    ): Response<HealthResult>
 
-    @GET("myhealthfinder/api/v3/topicsearch.json")
+    @GET("/diseases/disease_name.json")
     suspend fun searchTopics(
         @Query("q")
         searchQuery: String,
         @Query("page")
         pageNumber:Int = 1
-    ): Response<HealthResponse>
+    ): Response<HealthResult>
 }
