@@ -1,21 +1,30 @@
-package com.example.newsapi
+package com.example.healthwise.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import com.example.newsapi.R
-import com.example.newsapi.api.RetrofitInstance
-import com.example.newsapi.databinding.ActivityMainBinding
+import com.example.healthwise.DiseaseApplication
+import com.example.healthwise.R
+import com.example.healthwise.api.RetrofitInstance
+import com.example.healthwise.viewmodels.MainViewModel
+import com.example.healthwise.viewmodels.MainViewModelProviderFactory
+import com.example.healthwise.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 const val TAG = "MAIN_ACTIVITY"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+   lateinit var viewModel: MainViewModel
+
+   /* private val viewModel: CommonDiseasesViewModel by viewModels {
+        DiseaseViewModelProviderFactory((application as DiseaseApplication).repository)
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         val responses = RetrofitInstance.api
         Log.i(TAG,"called retrofit")
+
+       val viewModelProviderFactory = MainViewModelProviderFactory( (application as DiseaseApplication).repository)
+        viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MainViewModel::class.java)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -1,8 +1,8 @@
-package com.example.newsapi.room
+package com.example.healthwise.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.newsapi.models.Disease
+import com.example.healthwise.models.Disease
 
 @Dao
 interface ArticleDao {

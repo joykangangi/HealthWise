@@ -1,4 +1,4 @@
-package com.example.newsapi.utils
+package com.example.healthwise.utils
 
 class Constants {
     companion object {

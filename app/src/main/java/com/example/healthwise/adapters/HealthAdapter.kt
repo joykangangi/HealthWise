@@ -1,12 +1,12 @@
-package com.example.newsapi.adapters
+package com.example.healthwise.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newsapi.databinding.ArticleItemPreviewBinding
-import com.example.newsapi.models.Disease
+import com.example.healthwise.databinding.ArticleItemPreviewBinding
+import com.example.healthwise.models.Disease
 
 class HealthAdapter: RecyclerView.Adapter<HealthAdapter.HealthViewHolder>() {
 
@@ -41,7 +41,7 @@ class HealthAdapter: RecyclerView.Adapter<HealthAdapter.HealthViewHolder>() {
         }
 
     private val differCallBack = object : DiffUtil.ItemCallback<Disease>() {
-        override fun areItemsTheSame(oldItem: Disease , newItem: Disease): Boolean {
+        override fun areItemsTheSame(oldItem: Disease, newItem: Disease): Boolean {
             return oldItem.id == newItem.id
         }
 

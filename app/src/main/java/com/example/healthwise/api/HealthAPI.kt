@@ -1,6 +1,6 @@
-package com.example.newsapi.api
+package com.example.healthwise.api
 
-import com.example.newsapi.models.HealthResult
+import com.example.healthwise.models.HealthResult
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

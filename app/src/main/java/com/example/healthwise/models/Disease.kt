@@ -1,4 +1,4 @@
-package com.example.newsapi.models
+package com.example.healthwise.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

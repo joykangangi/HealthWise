@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HealthWise/app/src/main/res/layout/activity_main.xml" value="0.2421875" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/HealthWise/app/src/main/res/layout/article_item_preview.xml" value="0.2421875" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HealthWise/app/src/main/res/layout/common_diseases_fragment.xml" value="0.2421875" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HealthWise/app/src/main/res/menu/menu.xml" value="0.23846153846153847" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/NewsApi/app/src/main/res/layout/activity_main.xml" value="0.18796296296296297" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/NewsApi/app/src/main/res/layout/common_diseases_fragment.xml" value="0.18796296296296297" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/NewsApi/app/src/main/res/layout/fragment_saved_diseases.xml" value="0.18796296296296297" />

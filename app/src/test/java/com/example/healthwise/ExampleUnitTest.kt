@@ -1,4 +1,4 @@
-package com.example.newsapi
+package com.example.healthwise
 
 import org.junit.Test
 

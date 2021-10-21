@@ -1,4 +1,4 @@
-package com.example.newsapi.room
+package com.example.healthwise.room
 
 /*
 class AdaptersJson {

@@ -1,4 +1,4 @@
-package com.example.newsapi.room
+package com.example.healthwise.room
 
 import androidx.room.TypeConverter
 import com.squareup.moshi.JsonAdapter

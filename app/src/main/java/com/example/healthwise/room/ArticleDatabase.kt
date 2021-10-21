@@ -1,11 +1,11 @@
-package com.example.newsapi.room
+package com.example.healthwise.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.newsapi.models.Disease
+import com.example.healthwise.models.Disease
 
 @TypeConverters(Converters::class)
 @Database( entities = [Disease::class], exportSchema = false, version = 1)
@@ -22,7 +22,6 @@ abstract class ArticleDatabase: RoomDatabase() {
         //synchronized to ensure one thread at a time/thread safety
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
             instance ?: createDatabase(context).also{ instance = it }
-
         }
 
         private fun createDatabase(context: Context) =

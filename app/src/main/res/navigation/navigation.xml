@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/commonDiseasesFragment"
-        android:name="com.example.newsapi.CommonDiseasesFragment"
+        android:name="com.example.healthwise.ui.CommonDiseasesFragment"
         android:label="@string/dis_title"
         tools:layout="@layout/common_diseases_fragment" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedDiseasesFragment"
-        android:name="com.example.newsapi.SavedDiseasesFragment"
+        android:name="com.example.healthwise.ui.SavedDiseasesFragment"
         android:label="@string/saved"
         tools:layout="@layout/fragment_saved_diseases" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchDiseasesFragment"
-        android:name="com.example.newsapi.SearchDiseasesFragment"
+        android:name="com.example.healthwise.ui.SearchDiseasesFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search_diseases" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/articleFragment"
-        android:name="com.example.newsapi.ArticleFragment"
+        android:name="com.example.healthwise.ui.ArticleFragment"
         android:label="fragment_article"
         tools:layout="@layout/fragment_article" />
 </navigation>

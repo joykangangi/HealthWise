@@ -1,6 +1,6 @@
-package com.example.newsapi.api
+package com.example.healthwise.api
 
-import com.example.newsapi.utils.Constants.Companion.BASE_URL
+import com.example.healthwise.utils.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
