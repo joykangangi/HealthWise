@@ -5,9 +5,8 @@
         android:layout_height="wrap_content"
         app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
-        android:layout_margin="10dp"
+        android:layout_marginTop="1dp"
         app:cardBackgroundColor="@color/white"
-        app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:layout_constraintTop_toTopOf="parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -21,8 +20,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_label"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
         android:src="@drawable/medical_icon"

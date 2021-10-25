@@ -10,6 +10,8 @@ package com.example.healthwise.utils
  *      e)-> param2 = type of message,e.h successful or error
  *      f)-> sealed class -> abstract class that we can define which classes are allowed to inherit from this sealed class
  */
+
+
 sealed class Resource<T> (
     val data: T? = null,
     val message: String? = null

@@ -13,7 +13,7 @@ import com.example.healthwise.room.ArticleDatabase
 
 class DiseaseApplication: Application() {
 
-    private val database by lazy { ArticleDatabase.invoke(this) }
+    private val database by lazy { ArticleDatabase(this) }
     val repository by lazy { MainRepository( database.getArticleDao() ) }
 
 }

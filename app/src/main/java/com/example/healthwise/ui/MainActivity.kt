@@ -2,6 +2,7 @@ package com.example.healthwise.ui
 
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -16,15 +17,15 @@ import com.example.healthwise.viewmodels.MainViewModelProviderFactory
 import com.example.healthwise.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-const val TAG = "MAIN_ACTIVITY"
+private val TAG = "MAIN_ACTIVITY"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-   lateinit var viewModel: MainViewModel
+   //lateinit var viewModel: MainViewModel
 
-   /* private val viewModel: CommonDiseasesViewModel by viewModels {
-        DiseaseViewModelProviderFactory((application as DiseaseApplication).repository)
-    }*/
+     val viewModel: MainViewModel by viewModels {
+        MainViewModelProviderFactory((application as DiseaseApplication).repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,10 +42,10 @@ class MainActivity : AppCompatActivity() {
 
         val responses = RetrofitInstance.api
         Log.i(TAG,"called retrofit")
-
+/*
        val viewModelProviderFactory = MainViewModelProviderFactory( (application as DiseaseApplication).repository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MainViewModel::class.java)
-
+*/
     }
 
     override fun onSupportNavigateUp(): Boolean {
