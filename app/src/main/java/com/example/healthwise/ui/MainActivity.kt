@@ -15,16 +15,16 @@ import com.example.healthwise.api.RetrofitInstance
 import com.example.healthwise.viewmodels.MainViewModel
 import com.example.healthwise.viewmodels.MainViewModelProviderFactory
 import com.example.healthwise.databinding.ActivityMainBinding
+import com.example.healthwise.repository.MainRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val TAG = "MAIN_ACTIVITY"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-   //lateinit var viewModel: MainViewModel
 
-     val viewModel: MainViewModel by viewModels {
-        MainViewModelProviderFactory((application as DiseaseApplication).repository)
+   val viewModel: MainViewModel by viewModels {
+        MainViewModelProviderFactory(( application as DiseaseApplication).repository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         val responses = RetrofitInstance.api
         Log.i(TAG,"called retrofit")
-/*
+      /*
        val viewModelProviderFactory = MainViewModelProviderFactory( (application as DiseaseApplication).repository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MainViewModel::class.java)
 */
