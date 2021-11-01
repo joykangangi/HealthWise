@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.healthwise.models.Disease
 import com.example.healthwise.models.HealthResult
 import com.example.healthwise.repository.MainRepository
 import com.example.healthwise.utils.Resource
@@ -15,7 +16,10 @@ class MainViewModel(
 ): ViewModel() {
 
     val allArticles: MutableLiveData<Resource<HealthResult>> = MutableLiveData()
-    var breakingNewsPage = 1
+    var allDiseasesPage = 1
+
+    val searchArticles: MutableLiveData<Resource<Disease>> = MutableLiveData()
+    var searchingPage = 1
 
     init {
         getAllArticles()
@@ -23,11 +27,29 @@ class MainViewModel(
 
     fun getAllArticles() = viewModelScope.launch {
         allArticles.postValue(Resource.Loading())
-        val response = diseaseRepository.getAllDisease(breakingNewsPage)
-        allArticles.postValue(handleBreakingNewsResponse(response))
+        val response = diseaseRepository.getAllDisease(allDiseasesPage)
+        allArticles.postValue(handleHomeDiseasesResponse(response))
     }
 
-    private fun handleBreakingNewsResponse(response: Response<HealthResult>): Resource<HealthResult> {
+    fun searchArticles(searchQuery: String) = viewModelScope.launch {
+        searchArticles.postValue(Resource.Loading())
+        val response = diseaseRepository.searchDiseases(searchQuery, searchingPage)
+        with(searchArticles) {
+            postValue(handleSearchDiseasesResponse(response))
+        }
+    }
+
+
+    private fun handleHomeDiseasesResponse(response: Response<HealthResult>): Resource<HealthResult> {
+        if (response.isSuccessful) {
+            response.body()?.let { healthResult ->
+                return Resource.Success(healthResult)
+            }
+        }
+        return Resource.Error(response.message())
+    }
+
+    private fun handleSearchDiseasesResponse(response: Response<Disease>): Resource<Disease> {
         if (response.isSuccessful) {
             response.body()?.let { healthResult ->
                 return Resource.Success(healthResult)

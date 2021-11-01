@@ -5,18 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.healthwise.DiseaseApplication
 import com.example.healthwise.adapters.HealthAdapter
-import com.example.healthwise.viewmodels.MainViewModel
 import com.example.healthwise.databinding.CommonDiseasesFragmentBinding
 import com.example.healthwise.utils.Resource
-import com.example.healthwise.viewmodels.MainViewModelProviderFactory
-import okhttp3.internal.checkOffsetAndCount
+import com.example.healthwise.viewmodels.MainViewModel
 
 
 private val TAG = "CommonDiseasesFragment"
@@ -40,7 +34,7 @@ class CommonDiseasesFragment : Fragment() {
         viewModel = (activity as MainActivity).viewModel
         setUpRecyclerView()
 
-        viewModel.allArticles.observe(viewLifecycleOwner, Observer { response ->
+        viewModel.allArticles.observe(viewLifecycleOwner, { response ->
             when(response) {
                 is Resource.Success -> {
                     hideProgressBar()
