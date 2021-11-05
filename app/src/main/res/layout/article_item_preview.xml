@@ -34,7 +34,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/name"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:textSize="24sp"

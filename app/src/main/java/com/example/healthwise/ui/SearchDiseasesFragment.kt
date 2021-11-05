@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthwise.adapters.HealthAdapter
 import com.example.healthwise.databinding.FragmentSearchDiseasesBinding
+import com.example.healthwise.models.Disease
 import com.example.healthwise.utils.Constants.Companion.SEARCH_DISEASES_TIME_DELAY
 import com.example.healthwise.utils.Resource
 import com.example.healthwise.viewmodels.MainViewModel
@@ -38,7 +39,7 @@ class SearchDiseasesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
-        //setUpRecyclerView()
+        setUpView()
 
         var job: Job? = null
         binding.searchEt.addTextChangedListener { editable->
@@ -59,9 +60,9 @@ class SearchDiseasesFragment : Fragment() {
             when(response) {
                 is Resource.Success -> {
                     hideProgressBar()
-                    response.data?.let { healthResult ->
-                        healthAdapter.differ.submitList(healthResult)
-                    }
+                   //response.data?.let { healthResult ->
+                       // .differ.submitList(healthResult)
+                   // }
                 }
                 is Resource.Error -> {
                     showProgressBar()
@@ -85,11 +86,11 @@ class SearchDiseasesFragment : Fragment() {
     }
 
 
-    private fun setUpRecyclerView() {
-        healthAdapter = HealthAdapter()
-        binding.searchRV.apply {
-            adapter = healthAdapter
-            layoutManager = LinearLayoutManager(activity)
+    private fun setUpView() {
+
+        binding.apply {
+            searchRes.text = 
+            date.text = disease.data_updated_at
         }
     }
 
